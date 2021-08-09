@@ -25,6 +25,7 @@ const Auth: FunctionComponent = () => {
       }
 
       await api.authService.signInWithPassword(signInData);
+      localStorage.setItem('signInData', JSON.stringify(signInData));
       window.location.replace('/home');
     } catch (e) {
       setIsError(true);
